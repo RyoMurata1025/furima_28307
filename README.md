@@ -62,7 +62,7 @@
 | city        | string     | null: false                    |
 | address     | string     | null: false                    |
 | building    | string     |                                |
-| phone_num   | integer    | null: false                    |
+| phone_num   | string     | null: false                    |
 | buyer       | references | null: false, foreign_key: true |
 
 ## Association
