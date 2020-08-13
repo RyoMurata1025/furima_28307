@@ -15,6 +15,7 @@
 ### Association
 
 - has_many :items
+- has_one :buyers
 
 ## items テーブル
 
@@ -34,36 +35,36 @@
 ### Association
 
 - belongs_to :users
-- has_one :purchases
+- has_one :buyers
 
-## purchases テーブル
+## buyers テーブル
 
-| Column        | Type    | Options     |
-| ------------- | ------- | ----------- |
-| card_num      | integer | null: false |
-| card_month    | integer | null: false |
-| card_year     | integer | null: false |
-| security_code | integer | null: false |
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
 
 ## Association
 
+- belongs_to :users
 - belongs_to :items
-- has_one :buyer_address
+- has_one :buyer_addresses
 
-## messages テーブル
+## buyer_addresses テーブル
 
-| Column      | Type    | Options     |
-| ----------- | ------- | ----------- |
-| postal      | string  | null: false |
-| prefectures | string  | null: false |
-| city        | string  | null: false |
-| address     | string  | null: false |
-| building    | string  |             |
-| phone_num   | integer | null: false |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| postal      | string     | null: false                    |
+| prefectures | integer    | null: false                    |
+| city        | string     | null: false                    |
+| address     | string     | null: false                    |
+| building    | string     |                                |
+| phone_num   | integer    | null: false                    |
+| buyer       | references | null: false, foreign_key: true |
 
 ## Association
 
-- belongs_to :purchases
+- belongs_to :buyers
 
 # README
 
