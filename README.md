@@ -11,9 +11,7 @@
 | first_name       | string  | null: false                    |
 | family_name_kana | string  | null: false                    |
 | first_name_kana  | string  | null: false                    |
-| birth_year       | integer | null: false, foreign_key: true |
-| birth_month      | integer | null: false, foreign_key: true |
-| birth_day        | integer | null: false, foreign_key: true |
+| birth_day        | date    | null: false, foreign_key: true |
 
 ### Association
 
