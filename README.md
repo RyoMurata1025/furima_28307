@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column           | Type    | Options                        |
-| ---------------- | ------- | ------------------------------ |
-| nickname         | string  | null: false                    |
-| email            | string  | null: false                    |
-| password         | string  | null: false                    |
-| family_name      | string  | null: false                    |
-| first_name       | string  | null: false                    |
-| family_name_kana | string  | null: false                    |
-| first_name_kana  | string  | null: false                    |
-| birth_day        | date    | null: false, foreign_key: true |
+| Column           | Type    | Options     |
+| ---------------- | ------- | ----------- |
+| nickname         | string  | null: false |
+| email            | string  | null: false |
+| password         | string  | null: false |
+| family_name      | string  | null: false |
+| first_name       | string  | null: false |
+| family_name_kana | string  | null: false |
+| first_name_kana  | string  | null: false |
+| birth_day        | date    | null: false |
 
 ### Association
 
@@ -25,11 +25,11 @@
 | image         | string     | null: false                    |
 | name          | string     | null: false                    |
 | information   | text       | null: false                    |
-| category      | integer    | null: false, foreign_key: true |
-| status        | integer    | null: false, foreign_key: true |
-| delivery_fee  | integer    | null: false, foreign_key: true |
-| delivery_area | integer    | null: false, foreign_key: true |
-| delivery_days | integer    | null: false, foreign_key: true |
+| category      | integer    | null: false,                   |
+| status        | integer    | null: false,                   |
+| delivery_fee  | integer    | null: false,                   |
+| delivery_area | integer    | null: false,                   |
+| delivery_days | integer    | null: false,                   |
 | price         | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
