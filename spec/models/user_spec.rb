@@ -25,13 +25,6 @@ RSpec.describe User, type: :model do
       user.valid?
       expect(user.errors.full_messages).to include("Password can't be blank")
     end
-    it "passwordは6文字以上でないと登録できない" do
-      user = FactoryBot.build(:user)
-      user.password = "00000"
-      user.password_confirmation ="00000"
-      user.valid?
-      expect(user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
-    end
     it "passwordは半角英数字混合でないと登録できない" do
       user = FactoryBot.build(:user)
       user.password = "12345678"
@@ -101,3 +94,16 @@ RSpec.describe User, type: :model do
     end
   end
 end
+
+
+
+
+
+  # it "passwordは6文字以上でないと登録できない" do
+    #   user = FactoryBot.build(:user)
+    #   user.password = "00000"
+    #   user.password_confirmation ="00000"
+    #   user.valid?
+    #   expect(user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+    # end
+    # devise標準搭載のバリデーションとして6文字以上128文字以下で文字数制限がかかっている
