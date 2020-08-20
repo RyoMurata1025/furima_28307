@@ -18,8 +18,11 @@ class User < ApplicationRecord
     validates :birth_day
     end
 
-    validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/}
+  validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/}
       # inclusion: { in: ["@"] }なぜかエラーが出る為禁止
       # uniqueness: {case_sensitive: true}, 一意性のバリデーション。devise標準搭載されている為いらない
       # presence: trueに関しては標準装備
+
+  has_many :items
+
 end
