@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   root "items#index"
   resources :registrations
   resources :items
+  # get 'items/:id', to: 'items#inputed'
 end
