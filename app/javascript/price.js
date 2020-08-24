@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+window.addEventListener('click', function(){
 
 let inputBox = document.getElementById("item-price");
 inputBox.oninput = (e) => {
