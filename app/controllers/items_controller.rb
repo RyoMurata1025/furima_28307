@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @tweets = Item.all
+    @items = Item.all
   end
 
   def new
