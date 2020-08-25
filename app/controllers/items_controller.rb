@@ -32,7 +32,3 @@ class ItemsController < ApplicationController
   end
 
 end
-
-# def create
-#   @item.save!
-# end
