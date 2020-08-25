@@ -4,6 +4,10 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   belongs_to_active_hash :category
+  belongs_to_active_hash :status
+  belongs_to_active_hash :delivery_fee
+  belongs_to_active_hash :delivery_area
+  belongs_to_active_hash :delivery_days
 
   with_options presence: true do
     validates :name
