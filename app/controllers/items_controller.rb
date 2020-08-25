@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -15,9 +15,18 @@ class ItemsController < ApplicationController
   def edit
   end
 
+  def update
+    @item.update(item_params)
+    if @item.valid?
+      redirect_to item_path
+    else
+      render "edit"
+    end
+  end
+
   def create
     @item = Item.create(item_params)
-    if @item.save
+    if @item.valid?
       redirect_to root_path
     else
       render "new"
