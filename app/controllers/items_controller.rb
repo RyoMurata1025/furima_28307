@@ -9,12 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  def show
-  end
-
-  def edit
-  end
-
   def update
     @item.update(item_params)
     if @item.valid?
