@@ -6,23 +6,24 @@ class BuyersController < ApplicationController
 
   def create
     @item = Item.find(params[:item_id])
+    # @user = User.find(params[:user_id])
 
-    # @buyer = Buyer.new(price: buyer_params[:price]) 
-    # if @buyer.valid?
+    @buyer = BuyerAddress.new(buyer_params) 
+    if @buyer.valid?
       pay_item
-      # @buyer.save
+      @buyer.save
       return redirect_to root_path
-    # else
-    #   render 'index'
-    # end
+    else
+      render 'index'
+    end
 
   end
 
   private
 
-  # def buyer_params
-  #   params.permit(:price, :token)
-  # end
+  def buyer_params
+    params.permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :token, :item_id).merge(user_id: current_user.id)
+  end
 
   def pay_item
     Payjp.api_key = "sk_test_43eedc00d8b4cf0d98d95377"  # PAY.JPテスト秘密鍵
