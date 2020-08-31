@@ -3,7 +3,7 @@ class BuyersController < ApplicationController
   before_action :move_to_index
 
   def index
-    @buyer = Buyer.new
+    @buyer = BuyerAddress.new
     @item = Item.find(params[:item_id])
   end
 
