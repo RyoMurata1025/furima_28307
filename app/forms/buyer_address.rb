@@ -9,6 +9,7 @@ class BuyerAddress
     validates :city
     validates :house_number
     validates :phone_number, format: {with: /\d{1,11}/}
+    validates :token
   end
 
   def save
