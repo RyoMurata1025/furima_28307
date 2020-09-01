@@ -8,7 +8,7 @@ class BuyerAddress
     validates :prefecture_id
     validates :city
     validates :house_number
-    validates :phone_number, format: {with: /\d{1,11}/}
+    validates :phone_number, length: {maximum: 11}
     validates :token
   end
 
