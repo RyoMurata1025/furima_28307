@@ -1,16 +1,13 @@
 class BuyersController < ApplicationController
 
+  before_action :set_item, only: [:index, :create]
   before_action :move_to_index
 
   def index
     @buyer = BuyerAddress.new
-    @item = Item.find(params[:item_id])
   end
 
   def create
-    @item = Item.find(params[:item_id])
-    # @user = User.find(params[:user_id])
-
     @buyer = BuyerAddress.new(buyer_params) 
     if @buyer.valid?
       pay_item
@@ -50,6 +47,10 @@ class BuyersController < ApplicationController
     if current_user.id == @item.user_id
       redirect_to root_path
     end
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 
 end

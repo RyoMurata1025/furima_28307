@@ -5,7 +5,6 @@ RSpec.describe BuyerAddress, type: :model do
   before do
     @buyer_address = FactoryBot.build(:buyer_address)
   end
-  # binding.pry
 
   context '商品購入機能の正常系テストコード' do
     it "購入に必要な情報が入力されていれば情報が登録される" do
