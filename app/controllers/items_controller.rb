@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,6 +16,12 @@ class ItemsController < ApplicationController
       redirect_to root_path
     else
       render "show"
+    end
+  end
+
+  def show
+    if @item.buyer.present?
+      redirect_to root_path
     end
   end
 
