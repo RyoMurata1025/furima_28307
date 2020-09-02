@@ -24,5 +24,6 @@ class User < ApplicationRecord
       # presence: trueに関しては標準装備
 
   has_many :items
+  
   has_many :buyers
 end
