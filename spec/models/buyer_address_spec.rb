@@ -49,10 +49,11 @@ RSpec.describe BuyerAddress, type: :model do
       expect(@buyer_address.errors.full_messages).to include("Phone number can't be blank")
       end
     
-    it "郵便番号が12桁以上だと登録できない" do
-      @buyer_address.phone_number = "111111111111111111"
+    it "電話番号が12桁以上だと登録できない" do
+      @buyer_address.phone_number = "123456789012"
       @buyer_address.valid?
-      expect(@buyer_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+      # binding.pry
+      expect(@buyer_address.errors.full_messages).to include("Phone number is invalid. Phone number is too long")
       end
 
   end
